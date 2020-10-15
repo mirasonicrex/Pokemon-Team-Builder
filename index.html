@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,72 +13,73 @@
     <script defer src="./js/script.js"></script>
     <title>Pokemon Team Builder</title>
 </head>
+
 <body>
-    <header>
+    <header class="flex-ctr">
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu">
         <h1>Pokemon Team Builder</h1>
     </header>
-    <main> 
-        <section id="left-pannel" class="outline"> 
-            <form class="outline">
-                <input type="text" placeholder="Search for a Pokemon">
-                <input type="submit" value="Search"> 
-            </form>
-            <ol id="pokemon-list" class="outline"> 
-                <li>Pikachu</li>
-                <li>Pikachu</li>
-                <li>Pikachu</li>
-                <li>Pikachu</li>
-                <li>Pikachu</li>
-                <li>Pikachu</li>
-            </ol>
-        </section>
-        <section id="right-pannel" class="outline">
-            <div id="cards">
-                <article class="card outline">
-                    <h3>Pikachu</h3>
-                </article>
-                <article class="card outline">
-                    <h3>Pikachu</h3>
-                </article>
-                <article class="card outline">
-                    <h3>Pikachu</h3>
-                </article>
-                <article class="card outline">
-                    <h3>Pikachu</h3>
-                </article>
-                <article class="card outline">
-                    <h3>Pikachu</h3>
-                </article>
-                <article class="card outline">
-                    <h3>Pikachu</h3>
-                </article>   
-            </div>
-            <div id="types" class="outline">
-                <h3>Your team is comprised of:</h3>
-                <p>Normal</p>
-                <p>Fighting</p>
-                <p>Flying</p>
-                <p>Poison</p>
-                <p>Ground</p>
-                <p>Rock</p>
-                <p>Bug</p>
-                <p>Ghost</p>
-                <p>Steel</p>
-                <p>Fire</p>
-                <p>Water</p>
-                <p>Grass</p>
-                <p>Electric</p>
-                <p>Psychic</p>
-                <p>Ice</p>
-                <p>Dragon</p>
-                <p>Dark</p>
-                <p>Fairy</p>
-                <p>Unknown</p>
-                <p>Shadow</p>
-            </div>
-        </section>
+    <aside class="flex-ctr">
+        <form class="outline">
+            <input type="text" placeholder="Search for a Pokemon">
+            <input type="submit" value="Search">
+        </form>
+        <ol id="pokemon-list" class="outline">
+            <li>Pikachu</li>
+            <li>Pikachu</li>
+            <li>Pikachu</li>
+            <li>Pikachu</li>
+            <li>Pikachu</li>
+            <li>Pikachu</li>
+        </ol>
+    </aside>
+    <main>
+        <div id="cards">
+            <article class="card outline">
+                <h3>Pikachu</h3>
+            </article>
+            <article class="card outline">
+                <h3>Pikachu</h3>
+            </article>
+            <article class="card outline">
+                <h3>Pikachu</h3>
+            </article>
+            <article class="card outline">
+                <h3>Pikachu</h3>
+            </article>
+            <article class="card outline">
+                <h3>Pikachu</h3>
+            </article>
+            <article class="card outline">
+                <h3>Pikachu</h3>
+            </article>
+        </div>
+        <div id="types" class="outline">
+            <h3>Your team is comprised of:</h3>
+            <p>Normal</p>
+            <p>Fighting</p>
+            <p>Flying</p>
+            <p>Poison</p>
+            <p>Ground</p>
+            <p>Rock</p>
+            <p>Bug</p>
+            <p>Ghost</p>
+            <p>Steel</p>
+            <p>Fire</p>
+            <p>Water</p>
+            <p>Grass</p>
+            <p>Electric</p>
+            <p>Psychic</p>
+            <p>Ice</p>
+            <p>Dragon</p>
+            <p>Dark</p>
+            <p>Fairy</p>
+            <p>Unknown</p>
+            <p>Shadow</p>
+        </div>
     </main>
-    <footer>Copyright &copy; 2020 Pokemon Team Builder All Rights Reserved</footer>    
+
+    <footer class="flex-ctr">Copyright &copy; 2020 Pokemon Team Builder All Rights Reserved</footer>
 </body>
+
 </html>
