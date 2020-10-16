@@ -18,7 +18,7 @@ body {
     border: 2px solid red;
 }
 aside  {
-    background-color: salmon;
+    background-color: gray;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -26,7 +26,7 @@ aside  {
 }
 
 main {  
-    background-color: blue;
+    background-color:lightblue;
     display: flex;
     justify-content: flex-start;
     align-items: center;
