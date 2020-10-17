@@ -33,10 +33,25 @@ main {
     flex-flow: column wrap;
 
 }
+
+ol {
+    color: white;
+    font-size: 25px;
+    margin-left: 5px;
+    text-transform: capitalize;
+}
+li {
+    margin: 3px; 
+}
+
+button {
+    margin: 5px 5px 5px 50px;
+}
+
 #cards {
     display: flex;
     flex-wrap: no-wrap;
-    margin: 15px;
+    margin: 25px;
 }
 .card {
     margin: 20px;
