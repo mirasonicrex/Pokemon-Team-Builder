@@ -12,7 +12,7 @@ let spritesArr = [];
 //Caches Element References
 const $listEl = $('#pokemon-list');
 const $cardsEl = $('#cards');
-const $typeEl = $('#types'); 
+const $typeEl = $('#type');
 
 
 //Event Listeners
@@ -66,24 +66,37 @@ function generateList() {
 
 
 
+
 function render(isDetail) {
     if (isDetail) {
         //save type data in an arary 
         if (pokemonTeam.length < 6) {
             pokemonTeam.push(pokemonDetail.types);
             //console.log(pokemonTeam);
-        } else { 
-            return; 
-        } 
+        } else {
+            return;
+        }
+        //Gather all of the type data in one array
+        let allTypes = [];
+        let renderArr = []; 
         pokemonTeam.forEach(function (pokemon) {
-            pokemon.forEach(function(typeStat) {
-                let allTypes = [];
-                allTypes = typeStat.type.name; 
-                console.log(allTypes); 
-                $typeEl.text(`Types: ${allTypes}`)
-                //console.log('Types: ', typeStat.type.name)
+            pokemon.forEach(function (typeStat) { 
+                allTypes.push(typeStat.type.name);
+                console.log(allTypes);
+                
+                if (pokemonTeam.length === 6) {
+                    $typeEl.append(`<br> ${allTypes.pop()} <br>`);
+                }
+                
+                
+                
+                
             });
+
         });
+
+
+
 
         //save sprite data in an array
         let pokeSprite = pokemonDetail.sprites.front_default;

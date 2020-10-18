@@ -51,16 +51,27 @@ button {
 #cards {
     display: flex;
     flex-wrap: no-wrap;
-    margin: 25px;
+    margin: 30px;
 }
-.card {
-    margin: 20px;
-}
+
 #types {
     display: flex;
     align-self: flex-start;
     flex-flow: column wrap;
     margin-left: 25px;
+}
+
+#type {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 10px;
+    font-size: 20px;
+    
+}
+
+h2 {
+    color: gray;
+    margin: 5px;
 }
 
 header, footer {
