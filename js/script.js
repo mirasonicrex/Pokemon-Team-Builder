@@ -88,9 +88,6 @@ function render(isDetail) {
                     $typeEl.append(`<br> ${allTypes.pop()} <br>`);
                 }
                 
-                
-                
-                
             });
 
         });
