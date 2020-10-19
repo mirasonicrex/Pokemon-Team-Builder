@@ -13,10 +13,11 @@ let spritesArr = [];
 const $listEl = $('#pokemon-list');
 const $cardsEl = $('#cards');
 const $typeEl = $('#type');
-
+const $nextEl = $('#nxt-btn');
 
 //Event Listeners
 $listEl.on('click', 'li', handleClick)
+$nextEl.on('click', handleNext); 
 //Functions 
 
 init();
@@ -32,7 +33,7 @@ function getData(detailURL) {
         .then(function (data) {
             if (detailURL) {
                 pokemonDetail = data;
-                //console.log('Data: ', data);   
+                console.log('Data: ', data);   
                 render(true);
             } else {
                 pokemonData = data;
@@ -47,9 +48,16 @@ function getData(detailURL) {
 
 function handleClick() {
     const url = this.dataset.url;
+    
     getData(url);
-    //clicking on a name on the list turns it into the photo of the charater that was clicked and then stores the name in an array that will be called later when looking up the team types 
+    
 
+}
+
+function handleNext() {
+    //const url = pokemonData.next; 
+    console.log(pokemonData.next)
+    //need to render the next list to the screen
 }
 
 
