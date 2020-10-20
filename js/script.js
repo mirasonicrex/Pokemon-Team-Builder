@@ -8,16 +8,22 @@ const BASE_URL = 'https://pokeapi.co/api/v2/pokemon';
 let pokemonData, pokemonDetail;
 let pokemonTeam = [];
 let spritesArr = [];
+let nextUrl = 0;
 
 //Caches Element References
 const $listEl = $('#pokemon-list');
 const $cardsEl = $('#cards');
+const $namesEl = $('#names');
 const $typeEl = $('#type');
 const $nextEl = $('#nxt-btn');
+const $previousEl = $('#prev-btn');
+//const $input = $('input[type="text"]');
 
 //Event Listeners
 $listEl.on('click', 'li', handleClick)
 $nextEl.on('click', handleNext); 
+$previousEl.on('click', handlePrevious); 
+//$('form').on('submit', searchResult); 
 //Functions 
 
 init();
@@ -27,7 +33,7 @@ function init() {
 }
 
 function getData(detailURL) {
-    const url = detailURL ? detailURL : BASE_URL;
+    const url = detailURL ? detailURL : BASE_URL + '?offset=' + nextUrl;
 
     $.ajax(url)
         .then(function (data) {
@@ -48,17 +54,36 @@ function getData(detailURL) {
 
 function handleClick() {
     const url = this.dataset.url;
-    
+    console.log(url);
     getData(url);
-    
 
 }
 
 function handleNext() {
     //const url = pokemonData.next; 
-    console.log(pokemonData.next)
+    
+    nextUrl += 20;
+    getData(); 
+    console.log(nextUrl)
+    //getData(url); 
     //need to render the next list to the screen
 }
+
+function handlePrevious() {
+    if(nextUrl > 0) {
+        nextUrl -= 20; 
+        getData(); 
+    }
+}
+
+// function searchResult() {
+//     userInput = $input.val(); 
+//     $.ajax({url: BASE_URL + userInput
+//     }).then((data) => {
+//         inputData = data; 
+//     }
+//     );
+// }
 
 
 function generateList() {
@@ -72,26 +97,20 @@ function generateList() {
 }
 
 
-
-
-
 function render(isDetail) {
     if (isDetail) {
         //save type data in an arary 
         if (pokemonTeam.length < 6) {
             pokemonTeam.push(pokemonDetail.types);
-            //console.log(pokemonTeam);
         } else {
             return;
         }
         //Gather all of the type data in one array
         let allTypes = [];
-        let renderArr = []; 
         pokemonTeam.forEach(function (pokemon) {
             pokemon.forEach(function (typeStat) { 
                 allTypes.push(typeStat.type.name);
-                console.log(allTypes);
-                
+                //console.log(allTypes);
                 if (pokemonTeam.length === 6) {
                     $typeEl.append(`<br> ${allTypes.pop()} <br>`);
                 }
@@ -100,27 +119,28 @@ function render(isDetail) {
 
         });
 
-
-
-
         //save sprite data in an array
         let pokeSprite = pokemonDetail.sprites.front_default;
         spritesArr.push(pokeSprite);
-        //console.log("spites Array", spritesArr);
         //render individual sprites to the screen 
         spritesArr.forEach(function (image) {
             if (pokemonTeam.length < 7) {
                 var img = document.createElement('img');
                 img.src = image;
                 $cardsEl.append(img);
+               
+                $namesEl.text(`You just added: ${pokemonDetail.name}`);
+                console.log($namesEl)
                 spritesArr = [];
             } else {
                 return;
             }
         })
+    
 
     } else {
-        $listEl.html(generateList())
-
+        $listEl.html(generateList());
+       // $listEl.html(renderNext());
+       
     }
 }
