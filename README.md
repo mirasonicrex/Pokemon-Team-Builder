@@ -1,4 +1,4 @@
-## Pokemon Team Maker 
+## Pokemon Team Builder 
 
 A simple app to help you see what types your team is comprised of. Choose any six pokemon using the left side UI. Once you select six pokemon the different types that they are comprised of will appear. 
 

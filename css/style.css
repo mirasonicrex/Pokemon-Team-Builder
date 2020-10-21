@@ -7,14 +7,14 @@ body {
     display: grid;
     grid-template-columns: 400px 4fr;
     grid-template-rows: 90px 1fr 65px;
-    grid-gap: 5px; 
+    grid-gap: 5px;
     min-height: 100vh;
     font-family: Helvetica;
     margin: 0;
-   
+
 }
 
-aside  {
+aside {
     background-color: #bebebe;
     display: flex;
     justify-content: flex-start;
@@ -22,8 +22,8 @@ aside  {
     flex-wrap: wrap;
 }
 
-main {  
-    background-color:#aff5afd8;
+main {
+    background-color: #aff5afd8;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -40,12 +40,13 @@ ul {
     text-transform: capitalize;
     font-family: 'Russo One', sans-serif;
 }
+
 li {
-    margin: 3px; 
+    margin: 3px;
 }
 
 button {
-    margin: 15px; 
+    margin: 15px;
 }
 
 #list-heading {
@@ -56,9 +57,14 @@ button {
     display: flex;
     margin: 30px;
     border: solid white 5px;
+    background-color: #add8e6;
     padding: 20px;
     box-sizing: border-box;
-    
+}
+
+#cards>img {
+    height: 100px;
+    width: 100px;
 }
 
 #names {
@@ -82,10 +88,10 @@ button {
 #type {
     display: flex;
     flex-flow: column wrap;
-    margin-left: 30px; 
+    margin-left: 30px;
     font-size: 20px;
     font-family: 'Krona One', sans-serif;
-    
+
 }
 
 
@@ -94,27 +100,28 @@ h2 {
     font-family: 'Russo One', sans-serif;
 }
 
-header, footer {
+header,
+footer {
     grid-column: 1 / 3;
     color: tomato;
-    width: 100%; 
+    width: 100%;
     background-color: #add8e6;
     font-family: 'Krona One', sans-serif;
 }
 
 header {
-    padding-left: 10px; 
+    padding-left: 10px;
     text-shadow: 5px 2px 2px #808080;
-    display: flex; 
+    display: flex;
     justify-content: flex-start;
     align-items: center;
 
 }
 
 footer {
-    height: 80px; 
+    height: 80px;
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
