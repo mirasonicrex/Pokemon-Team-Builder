@@ -8,6 +8,7 @@ const BASE_URL = 'https://pokeapi.co/api/v2/pokemon';
 let pokemonData, pokemonDetail;
 let pokemonTeam = [];
 let spritesArr = [];
+let allTypes = [];
 let nextUrl = 0;
 
 //Caches Element References
@@ -106,11 +107,9 @@ function render(isDetail) {
             return;
         }
         //Gather all of the type data in one array
-        let allTypes = [];
         pokemonTeam.forEach(function (pokemon) {
             pokemon.forEach(function (typeStat) { 
                 allTypes.push(typeStat.type.name);
-                //console.log(allTypes);
                 if (pokemonTeam.length === 6) {
                     $typeEl.append(`<br> ${allTypes.pop()} <br>`);
                 }

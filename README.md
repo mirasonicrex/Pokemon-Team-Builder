@@ -12,7 +12,7 @@ API used: https://pokeapi.co/api/v2/pokemon
 - CSS 
 - JQuery 
 
-## Approach: 
+### Approach: 
 - Create a basic CSS layout that complements the apps functionality, with the UI taking up 1/4 on the left hand side and the main display taking up 3/4 of the screen 
 - Used the Pokemon API to request data on the different pokemon 
 - Created JavaScript that allowed the user to click on the list of pokemon name and diplayed the appropriate photo
