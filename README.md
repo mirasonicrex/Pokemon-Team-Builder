@@ -27,7 +27,6 @@ Link to the live site: https://mheckmann7.github.io/Pokemon-Team-Builder/
 
 ### Future Implementations: 
 - Add a delete button to remove certain pokemon from your team 
-- Make a 'reset' button so you can select an entirely new team
 - Remove repeated types when there is more than one member of the team with the same type
 - Show what types your team is weak too 
 - Add a search bar so you can select pokemon using both the list and search
