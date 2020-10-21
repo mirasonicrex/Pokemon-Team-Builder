@@ -8,6 +8,8 @@ API used: https://pokeapi.co/api/v2/pokemon
 
 ![Screenshot](./Photos/pic1.png?raw=true)
 
+![Screenshot](./Photos/pic2.png?raw=true)
+
 ### Technologies Used: 
 - JavaScript 
 - HTML5
