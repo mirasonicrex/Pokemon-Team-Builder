@@ -6,6 +6,8 @@ API used: https://pokeapi.co/api/v2/pokemon
 
 [Wireframe of 'main' application screen](https://i.imgur.com/ymGelkh.png)
 
+!(./Photos/pic1.png?raw=true)
+
 ### Technologies Used: 
 - JavaScript 
 - HTML5
