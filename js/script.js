@@ -17,13 +17,16 @@ const $typeEl = $('#type');
 const $nextEl = $('#nxt-btn');
 const $previousEl = $('#prev-btn');
 const $resetEl = $('#reset-btn');
-//const $input = $('input[type="text"]');
+const $form = $('form');
+const $input = $('input[type="text"]');
+const $searchedPokemon = $('#searched-pokemon') 
 
 //Event Listeners
 $listEl.on('click', 'li', handleClick)
 $nextEl.on('click', handleNext);
 $previousEl.on('click', handlePrevious);
 $resetEl.on('click', handleReset);
+$form.on('submit', handleSearch); 
 //Functions 
 
 init();
@@ -36,7 +39,7 @@ function getData(detailURL) {
     const url = detailURL ? detailURL : BASE_URL + '?offset=' + changeUrl;
 
     $.ajax(url)
-        .then(function (data) {
+        .then((data) => {
             if (detailURL) {
                 pokemonDetail = data;
                 render(true);
@@ -44,11 +47,25 @@ function getData(detailURL) {
                 pokemonData = data;
                 render();
             }
-        }, function (error) {
+        },(error) => {
             console.log('Error: ', error);
         });
-
-}
+        
+    }
+    
+    function handleSearch(event) { 
+        event.preventDefault(); 
+        let userInput = $input.val(); 
+        if(!userInput) return; 
+        $.ajax(BASE_URL + '/' + userInput)
+        .then((data) => {
+            pokemonDetail = data;
+            console.log('input', pokemonDetail); 
+            handleSearchedPokemon(); 
+        },(error) => {
+            console.log('Error: ', error); 
+        });
+    }
 
 function handleClick() {
     const url = this.dataset.url;
@@ -73,19 +90,9 @@ function handleReset() {
     $typeEl.empty();
     pokemonTeam = [];
     spritesArr = [];
-
     getData();
 
 }
-
-// function searchResult() { TO IMPLEMENT LATER
-//     userInput = $input.val(); 
-//     $.ajax({url: BASE_URL + userInput
-//     }).then((data) => {
-//         inputData = data; 
-//     }
-//     );
-// }
 
 
 function generateList() {
@@ -135,6 +142,12 @@ function handleTypes() {
     })
 }
 
+function handleSearchedPokemon() {
+    $searchedPokemon.text('You searched: ' + pokemonDetail.name); 
+    handleTypes(); 
+    
+    
+} 
 
 function render(isDetail) {
     if (isDetail) {

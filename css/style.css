@@ -31,6 +31,19 @@ main {
 
 }
 
+input[type=text] {
+    margin-left: 15px; 
+    width: 300px;    
+    
+}
+
+#searched-pokemon { 
+    margin-left: 15px;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-family: 'Russo One', sans-serif;
+}
+
 ul {
     display: flex;
     flex-direction: column;
