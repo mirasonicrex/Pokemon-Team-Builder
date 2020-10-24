@@ -19,14 +19,14 @@ const $previousEl = $('#prev-btn');
 const $resetEl = $('#reset-btn');
 const $form = $('form');
 const $input = $('input[type="text"]');
-const $searchedPokemon = $('#searched-pokemon') 
+const $searchedPokemon = $('#searched-pokemon')
 
 //Event Listeners
 $listEl.on('click', 'li', handleClick)
 $nextEl.on('click', handleNext);
 $previousEl.on('click', handlePrevious);
 $resetEl.on('click', handleReset);
-$form.on('submit', handleSearch); 
+$form.on('submit', handleSearch);
 //Functions 
 
 init();
@@ -47,25 +47,27 @@ function getData(detailURL) {
                 pokemonData = data;
                 render();
             }
-        },(error) => {
+        }, (error) => {
             console.log('Error: ', error);
         });
-        
-    }
-    
-    function handleSearch(event) { 
-        event.preventDefault(); 
-        let userInput = $input.val(); 
-        if(!userInput) return; 
-        $.ajax(BASE_URL + '/' + userInput)
+
+}
+
+function handleSearch(event) {
+    event.preventDefault();
+    let userInput = $input.val();
+    userInput = userInput.toLowerCase(); 
+    if (!userInput) return;
+    $.ajax(BASE_URL + '/' + userInput)
         .then((data) => {
             pokemonDetail = data;
-            console.log('input', pokemonDetail); 
-            handleSearchedPokemon(); 
-        },(error) => {
-            console.log('Error: ', error); 
+            console.log('input', pokemonDetail);
+            handleSearchedPokemon();
+            $form[0].reset(); 
+        }, (error) => {
+            console.log('Error: ', error);
         });
-    }
+}
 
 function handleClick() {
     const url = this.dataset.url;
@@ -143,11 +145,9 @@ function handleTypes() {
 }
 
 function handleSearchedPokemon() {
-    $searchedPokemon.text('You searched: ' + pokemonDetail.name); 
-    handleTypes(); 
-    
-    
-} 
+    $searchedPokemon.text('You searched: ' + pokemonDetail.name);
+    handleTypes();
+}
 
 function render(isDetail) {
     if (isDetail) {
