@@ -23,8 +23,6 @@ API used: https://pokeapi.co/api/v2/pokemon
 - Implimented previous and next buttons so the user could scroll through the entire list
 - Saved the type information into an array to be called when the user has selected six pokemon 
 
-Link to the live site: https://mheckmann7.github.io/Pokemon-Team-Builder/
-
 ### Future Implementations: 
 - Add a delete button to remove certain pokemon from your team 
 - Remove repeated types when there is more than one member of the team with the same type
